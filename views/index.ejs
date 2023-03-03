@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+
+        }
+        .article{
+            width: 100vw;
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.26);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 15px;
+        }
+        section{
+            width: 100vw;
+            margin-bottom: 10px;
+            
+        }
+
+        #content{
+            margin-top: 10px;
+            font-size: 30px;
+            color: white;
+        }
+        #heading{
+            margin-top: 5px;
+            font-size: 40px;
+        }
+        .box{
+            margin-top: 0;
+            width:100vw;
+            height:150px;
+            background-color: rgb(239, 239, 23);
+        }
+        #new_article-btn{
+            width: 150px;
+            height: 50px;
+            background-color:rgb(98, 137, 156);
+            color: white;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        #show-btn{
+            width: 150px;
+            height: 50px;
+            background-color:rgb(98, 137, 156);
+            color: white;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        #delete-btn{
+            width: 70px;
+            height: 30px;
+            background-color:rgb(219, 72, 72);
+            color: white;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 id="heading">Medium </h1>
+        <h3 id="content">Discover stories, articles and research work </h3>
+    </div>
+
+    <a href="/articles/new"><button id="new_article-btn">Add New Article</button></a>
+
+    <section>
+        <% for(let item of articles){%>
+            <article class="article">
+                <h4><%= item.name %></h4>
+                <h5><%= item.date %></h5>
+                <p><%= item.desc %></p>
+                <a href="/articles/<%= item.id %>"><button id="show-btn">Show</button></a>
+               
+
+            </article>
+        <% } %>
+    </section>
+    <%  %>
+</body>
+</html>
